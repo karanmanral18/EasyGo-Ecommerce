@@ -1,0 +1,56 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/product.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+        <div id="shortcut">
+            <a href="#Footwear">SmartPhones</a>
+            <a href="#Electronics">Electronics</a>
+            <a href="#Books">Books</a>
+            <a href="#Clothing">Clothing</a>
+        </div>
+            <main>
+                <% if (prods.length > 0) { %>   
+                     <%  let Category = ["Books","Footwear","Smartphones","Clothing","Electronics"];
+                    for (let items of Category) { %>
+                   <% 
+                    const result = prods.filter(product => product.category === items.toLowerCase());
+                    %>
+                    <h1 class="category"><%=items%></h1>
+                    <hr>
+                    <div class="grid">
+                        <% for (let product of result) { %>
+                            <article id="<%=items%>"  class="card card<%=items%> product-item ">
+                            <!-- <article id="<%=items%>" onclick="location.href='/products/<%= product._id %>';" class="card card<%=items%> product-item "> -->
+                              
+                                <div class="card__image <%=items%>">
+                                    <img src="/<%= product.imageUrl %>" alt="<%= product.title %>">
+                                </div>
+                                
+                                <div class="card__content <%=items%>">
+                                    <h1 class="product__title">
+                                        <%= product.title %>
+                                    </h1>
+                                    <p class="product__description <%=items%>">
+                                        <%= product.description %>
+                                    </p>
+                                    <strong>$<%= product.price %></strong>
+                                </div>
+                                <div class="card__actions <%=items%>">
+                                    <!-- <a href="/products/<%= product._id %>" class="btn">View Product</a> -->
+                                    
+                                        <%- include('../includes/add-to-cart.ejs', {product: product}) %>
+                                </div>
+                            </article>
+                            <% } %>
+                    </div>
+
+                    <% } %>
+                     <%- include('../includes/pagination.ejs', {currentPage: currentPage, nextPage: nextPage, previousPage: previousPage, lastPage: lastPage, hasNextPage: hasNextPage, hasPreviousPage: hasPreviousPage}) %>  
+                <%  } else { %>
+                        <h1>No Products Found!</h1>
+                        <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>

@@ -1,0 +1,28 @@
+.p_table {
+  border: 1px solid black;
+  margin: 80px auto;
+  width: 1000px;
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.p_table .p_table_col {
+  border: none;
+  height: 80px;
+  margin: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.danger {
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  right: 30px;
+}
+.large {
+  width: 14rem;
+  height: 5rem;
+  font-size: 2rem;
+  padding: 4px;
+}
