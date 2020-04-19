@@ -7,7 +7,7 @@ const { validationResult } = require("express-validator/check");
 // const transporter = nodemailer.createTransport({
 //   service: "gmail",
 //   auth: {
-//     user: "assassinmanral@gmail.com",
+//     user: "email",
 //     pass: "",
 //   },
 // });
@@ -160,7 +160,7 @@ exports.postSignup = (req, res, next) => {
       res.redirect("/login");
       // return transporter.sendMail({
       //   to: email,
-      //   from: "assassinmanral@gmail.com",
+      //   from: "email",
       //   subject: "Signup sucess",
       //   html: "<h1> Welocome to our Online Shop </h1>"
       // });
@@ -215,7 +215,7 @@ exports.postReset = (req, res, next) => {
         res.redirect("/");
         // transporter.sendMail({
         //   to: req.body.email,
-        //   from: "assassinmanral@gmail.com",
+        //   from: "email",
         //   subject: "Password Reset",
         //   html: `
         //     <p>You requested a password to be reset </p>
