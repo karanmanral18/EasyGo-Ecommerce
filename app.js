@@ -17,9 +17,6 @@ const User = require("./models/user");
 
 // const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0-nrcnx.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;
 
-const MONGODB_URI =
-  "mongodb+srv://Karan:rofy2QteT7hrBXRb@cluster0-nrcnx.mongodb.net/shop_my";
-
 const app = express();
 const store = new MongoDBStore({
   uri: MONGODB_URI,
