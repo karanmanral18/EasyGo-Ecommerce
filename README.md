@@ -3,7 +3,7 @@ E-commerce web app using Node,Express, &amp; MongoDB/Mongoose
 
 ## Demo Website
 
-👉 Demo : https://easygo86505.herokuapp.com/.herokuapp.com/
+👉 Demo : https://easygo86505.herokuapp.com
 
 
 <img src="public/readme/home_big.jpg" width="900" >
